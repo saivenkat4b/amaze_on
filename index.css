@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+.heading{
+    font-family: "Josefin Sans";
+}
+
+.title{
+    /*background-color: aqua;*/
+    margin-top: 20px;
+    height: 130px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop{
+    background-color: blueviolet;
+    height: 50px;
+    width: 100%;
+    font-family: "Savate" ;
+    font-weight: 500;
+    letter-spacing: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg_img{
+    width: 100%;
+    height: 500px;
+    background-image: url(https://f.hubspotusercontent30.net/hubfs/5624788/Electronic%20Online%20Header-01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop1{
+    height: 50px;
+    width: 100%;
+    font-family: "Savate" ;
+    font-weight: 500;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.sect{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(228, 117, 140);
+    border-radius: 25px;
+}
