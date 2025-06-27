@@ -233,7 +233,8 @@ body {
     width: 60px;
     height: 60px;
     margin: 0 auto 1rem;
-    background: #ffd700;
+    /*  changed the background color YELLOW TO BLACK */
+    background: #272517;
     border-radius: 50%;
     display: flex;
     align-items: center;
