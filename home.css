@@ -124,10 +124,10 @@ body {
 .cta-button {
     background: #ffd700;
     color: #333;
-    padding: 1rem 2rem;
+    padding: 0.4rem 0.8rem;
     border: none;
     border-radius: 25px;
-    font-size: 1.1rem;
+    font-size: 0.9em;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
@@ -459,3 +459,81 @@ body {
 
 
 /* ADD CODE */
+
+
+
+/* footer */
+
+
+footer {
+    background: #0a0880;
+    background: linear-gradient(90deg, rgba(10, 8, 128, 1) 0%, rgba(38, 38, 135, 1) 35%, rgba(38, 193, 224, 1) 100%);
+   /*  position: fixed; */
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    border: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 14px;
+    
+}
+
+
+.top-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.top-row>div {
+    flex: 1;
+    min-width: 120px;
+    margin: 5px;
+}
+
+.bottom-row {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    font-size: 12px;
+    bottom: 0;
+    /* justify-content: center; */
+}
+
+
+.social-media>img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+select{
+    border-radius: 2px;
+    font-family: inherit;
+    background-color: #f1dfdf;
+}
+/* h5
+{
+    text-align: center;
+} */
+
+
+/* footer */
