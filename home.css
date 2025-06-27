@@ -270,6 +270,21 @@ body {
     overflow: hidden;
 }
 
+
+/*display images  */
+
+.disp_img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* or 'contain' depending on your need */
+    display: block;
+}
+
+
+
+/* display images*/
+
+
 .product-info {
     padding: 1.5rem;
 }
