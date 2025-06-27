@@ -563,5 +563,16 @@ select{
     text-align: center;
 } */
 
+/* small top logo  */
+
+.small-logo{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+
+/* small top logo  */
+
 
 /* footer */
