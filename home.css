@@ -34,13 +34,22 @@
     padding: 10px 15px;
     width: 250px;
     border: 2px solid #fdd835;
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px ;
     outline: none;
     font-size: 12px;
     font-family: "Poppins", sans-serif;
     height: 35px; /* Ensures consistent height */
 }
 
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
 
 
 
