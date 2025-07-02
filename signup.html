@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Amaze On</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #e0e4eb;
+            margin: 0;
+            padding: 0;
+            font-family: 'Mona Sans', sans-serif;
+        }
+
+        .register-wrapper {
+            background: linear-gradient(135deg, #f0efec, #e4ca6f);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            width: 95%;
+            position: relative;
+        }
+
+        .form-section {
+            padding: 50px;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control.custom-input {
+            border-radius: 30px;
+            height: 40px;
+            padding-left: 20px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .submit-btn {
+            background: #ffd75e;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 0;
+            width: 90%;
+            font-weight: 500;
+            transition: 0.3s;
+            margin: 20px auto 10px auto;
+            display: block;
+        }
+
+        .submit-btn:hover {
+            background: #ffdc4f;
+            color: white;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bottom-text {
+            font-size: 13px;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="register-wrapper row">
+
+            <!-- Left Form Side -->
+            <div class="col-md-5 form-section d-flex flex-column justify-content-center" style="min-height: 500px;">
+
+                <div class="logo">Amaze On</div>
+
+                <h4 class="text-center mb-4">Sign Up</h4>
+
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control custom-input" placeholder="Full name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" class="form-control custom-input" placeholder="Email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" class="form-control custom-input" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+
+                <div class="bottom-text mt-3">
+                    Already have an account? <a href="#">Login</a>
+                </div>
+
+            </div>
+
+            <!-- Right Image Side -->
+            <div class="col-md-7 image-section d-none d-md-block">
+                <img src="../amaze_on/assests/Icons8/6300830.jpg" alt="Amaze On Signup Image">
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
