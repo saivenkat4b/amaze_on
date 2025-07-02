@@ -1,0 +1,96 @@
+/* header */
+
+/* changed the bg col to yellow */
+.header{
+    background-color: rgb(255, 192, 44);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+.logo{
+    height: 45px;
+    
+}
+.a_img{
+    width: 150px;
+    height: 45px;
+    display: flex;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin-top: 5px;
+}
+
+.inp {
+    padding: 10px 15px;
+    width: 250px;
+    border: 2px solid #fdd835;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    height: 35px; /* Ensures consistent height */
+}
+
+
+/* header */
+
+
+
+/* Account Activity Section */
+.account-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.account-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.account-balance {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.balance-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    }
+
+.recent-orders {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.order-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
