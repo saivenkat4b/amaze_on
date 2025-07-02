@@ -6,30 +6,41 @@
     <title>Amaze On</title>
     <link rel="stylesheet" href="home.css">
 
-    <header id="top" class="header">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <header class="header">
         <div class="logo">
             <img class="a_img" src="https://static.vecteezy.com/system/resources/thumbnails/019/766/240/small/amazon-logo-amazon-icon-transparent-free-png.png">
 
         </div>
 
-        
+        <nav class="nav-tabs">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favourites</a>
+                </li>
+                <li class="nav-item cart-icon d-flex align-items-center">
+                    <a class="nav-link" href="#cart">My Cart 🛒</a>
+                    <span class="cart-count badge bg-danger ms-1"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-warning ms-2" href="#" style="padding: 0.5rem 1rem;">New Order</a>
+                </li>
+            </ul>
+        </nav>        
 
-        <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="">Brands</a></li>
-            <li><a href="">Favourites</a></li>
-            <li class="cart-icon">
-                <a href="#cart">My Cart🛒</a>
-                <span class="cart-count"></span>
-            </li>
-            <li><a href="#" class="cta-button" style="padding: 0.5rem 1rem;">New Order</a></li>
-        </ul>
-        
+
         <div class="search" >
             <div>
                 <input class="inp" type="text" placeholder="Search" />
-                <!-- <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="search icon"> -->
+                <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="search icon">
             </div>
         </div>
 
@@ -37,46 +48,92 @@
     </header>
 
 </head>
+
 <body>
     
     <!-- Account Activity -->
     <section class="account-section" id="account">
         <div class="container">
-            <div class="account-card">
-                <div class="account-header">
-                    <h2>My Account Activity</h2>
-                    <div class="account-balance">
-                        <div>Total money spent till date:</div>
-                        <div class="balance-amount">₹50000.00</div>
-                        <div style="font-size: 0.9rem; margin-top: 0.5rem;">
-                            <span style="color: #4CAF50;">₹5005.00</span> Reward Credits
-                        </div>
+            <div class="card account-card-custom shadow-lg mb-5">
+            <div class="card-header account-header-custom d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">My Account Activity</h2>
+                <div class="account-balance-custom text-end">
+                <div class="fw-semibold">Total money spent till date:</div>
+                <div class="balance-amount">₹50,000.00</div>
+                <div class="reward-credit">₹5005.00 Reward Credits</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title mb-4">Recent Orders</h4>
+
+                <div class="accordion" id="ordersAccordion">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Order# 87108 — <span class="px-2 py-1 border border-success rounded text-success fw-bold ms-2">₹500</span>
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#ordersAccordion">
+                    <div class="accordion-body">
+                        <strong>Invoice No:</strong> INV-87108 <br>
+                        <strong>Order Date:</strong> 16 June 2025 <br>
+                        <strong>Status:</strong> Delivered <br>
+                        <strong>Description:</strong> 1x Wireless Mouse, 1x USB-C Adapter
+                    </div>
                     </div>
                 </div>
-                
-                <h3>Recent orders</h3>
-                <div class="recent-orders">
-                    <div class="order-item">
-                        <strong>Order# 87108</strong>
-                        <p>₹500</p>
-                        <p>Delivered 07/16/2023</p>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        Order# 87234 — <span class="px-2 py-1 border border-success rounded text-success fw-bold ms-2">₹1200</span>
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#ordersAccordion">
+                    <div class="accordion-body">
+                        <strong>Invoice No:</strong> INV-87234 <br>
+                        <strong>Order Date:</strong> 16 December 2024 <br>
+                        <strong>Status:</strong> Delivered <br>
+                        <strong>Description:</strong> 1x Bluetooth Speaker, 2x Charging Cable
                     </div>
-                    <div class="order-item">
-                        <strong>Order# 87234</strong>
-                        <p>₹500</p>
-                        <p>Delivered 07/16/2024</p>
-                    </div>
-                    <div class="order-item">
-                        <strong>Order# 87334</strong>
-                        <p>₹500</p>
-                        <p>Delivered 07/16/2025</p>
-                    </div>
-                    <div class="order-item">
-                        <strong>Order# 87834</strong>
-                        <p>₹500</p>
-                        <p>Processing</p>
                     </div>
                 </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        Order# 87334 — <span class="px-2 py-1 border border-success rounded text-success fw-bold ms-2">₹7560</span>
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#ordersAccordion">
+                    <div class="accordion-body">
+                        <strong>Invoice No:</strong> INV-87334 <br>
+                        <strong>Order Date:</strong> 16 August 2024 <br>
+                        <strong>Status:</strong> Delivered <br>
+                        <strong>Description:</strong> 1x Power Bank, 1x Phone Case
+                    </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        Order# 87834 — <span class="px-2 py-1 border border-success rounded text-success fw-bold ms-2">₹5500</span>
+                    </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#ordersAccordion">
+                    <div class="accordion-body">
+                        <strong>Invoice No:</strong> INV-87834 <br>
+                        <strong>Order Date:</strong> 30 April 2023 <br>
+                        <strong>Status:</strong> Processing <br>
+                        <strong>Description:</strong> 1x Smartwatch, 1x USB Hub
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
             </div>
         </div>
     </section>
