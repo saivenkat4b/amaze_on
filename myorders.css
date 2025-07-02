@@ -13,7 +13,7 @@ html, body {
 }
 
 
-/* === Body Gradient === */
+/*  body Gradient*/
 body {
     background: linear-gradient(#fff3b0, #ffe082, #ffec99);
     background-attachment: fixed;
@@ -22,7 +22,7 @@ body {
     padding: 0;
 }
 
-/* === Header Tabs === */
+/* Header Tabs */
 .nav-tabs {
     display: flex;
     align-items: center;
@@ -70,7 +70,7 @@ body {
     align-items: center;
 }
 
-/* === Accordion Styles === */
+/* accordion */
 .accordion-item {
     background-color: rgba(258, 251, 251, 0.8); /* soft white with transparency */
     border: 1px solid #f1e7c9;
@@ -99,12 +99,12 @@ body {
     border-top: 1px solid #e0e0e0;
 }
 
-/* === Container transparency === */
+/* container */
 .container {
     background-color:#4465d2 ;
 }
 
-/* === Mobile Adjustments === */
+/* responsive mobile adjustments */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
