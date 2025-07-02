@@ -17,33 +17,43 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body id="top">
 
-    <header id="top" class="header">
+    <header class="header">
         <div class="logo">
-            <img class="a_img"
-                src="https://static.vecteezy.com/system/resources/thumbnails/019/766/240/small/amazon-logo-amazon-icon-transparent-free-png.png">
+            <img class="a_img" src="https://static.vecteezy.com/system/resources/thumbnails/019/766/240/small/amazon-logo-amazon-icon-transparent-free-png.png">
 
         </div>
 
+        <nav class="nav-tabs">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#brands">Brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favourites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="myorders.html">My Orders</a>
+                </li>
+                <li class="nav-item cart-icon d-flex align-items-center">
+                    <a class="nav-link" href="#cart">My Cart 🛒</a>
+                    <span class="cart-count badge bg-danger ms-1"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-warning ms-2" href="#" style="padding: 0.5rem 1rem;">New Order</a>
+                </li>
+            </ul>
+        </nav>        
 
 
-        <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="#brands">Brands</a></li>
-            <li><a href="">Favourites</a></li>
-            <li><a href="myorders.html">My Orders</a></li>
-            <li class="cart-icon">
-                <a href="#cart">My Cart🛒</a>
-                <span class="cart-count"></span>
-            </li>
-            <li><a href="#" class="cta-button" style="padding: 0.5rem 1rem;">New Order</a></li>
-        </ul>
-
-        <div class="search">
+        <div class="search" >
             <div>
                 <input class="inp" type="text" placeholder="Search" />
-                <!-- <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="search icon"> -->
+                <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="search icon">
             </div>
         </div>
 
