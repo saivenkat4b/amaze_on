@@ -1,96 +1,118 @@
-/* header */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins&display=swap');
 
-/* changed the bg col to yellow */
-.header{
-    background-color: rgb(255, 192, 44);
-    width: 100%;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( #fff3b0, #ffe082, #debe31);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* === Body Gradient === */
+body {
+    background: linear-gradient(#fff3b0, #ffe082, #ffec99);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Header Tabs === */
+.nav-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
     height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 10px;
-
+    color: #000 !important;
+    font-weight: 500;
 }
 
-.logo{
-    height: 45px;
-    
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #4465d2 !important;
 }
-.a_img{
-    width: 150px;
-    height: 45px;
+
+.nav .btn {
     display: flex;
-}
-
-.search {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
-    position: relative;
-    margin-top: 5px;
+    justify-content: center;
+    height: 40px;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 20px;
+    margin-left: 0.5rem;
 }
 
-.inp {
-    padding: 10px 15px;
-    width: 250px;
-    border: 2px solid #fdd835;
-    border-radius: 25px 0 0 25px;
-    outline: none;
-    font-size: 12px;
-    font-family: "Poppins", sans-serif;
-    height: 35px; /* Ensures consistent height */
+.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-
-/* header */
-
-
-
-/* Account Activity Section */
-.account-section {
-    padding: 4rem 0;
-    background: #f8f9fa;
+.nav-item a.nav-link,
+.nav-item .btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.account-card {
-    background: white;
+/* === Accordion Styles === */
+.accordion-item {
+    background-color: rgba(258, 251, 251, 0.8); /* soft white with transparency */
+    border: 1px solid #f1e7c9;
     border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.account-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.account-balance {
-    background: #333;
-    color: white;
+.accordion-button {
+    background-color: rgba(255, 243, 179, 0.9);
+    color: #000;
+    font-weight: 600;
     padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
 }
 
-.balance-amount {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffd700;
+.accordion-button:not(.collapsed) {
+    background-color: #ffe082;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.accordion-body {
+    background-color: #9c8308;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    color: #333;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* === Container transparency === */
+.container {
+    background-color:#4465d2 ;
+}
+
+/* === Mobile Adjustments === */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-.recent-orders {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.order-item {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
+    .nav-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
