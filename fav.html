@@ -1,122 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Store</title>
-    <!-- Bootstrap CSS -->
+    <title>My Favorites - Mobile Store</title>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
-            background-image: url('https://www.pngkey.com/png/detail/370-3707172_the-babadook-my-favourite-things-sign.png'); /* Background image */
-            
-            background-size: cover;
-            background-repeat: no-repeat;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
             color: #fff;
         }
-        .container {
-            margin-top: 50px;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for cards */
-            padding: 20px;
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            text-align: center;
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+            padding: 15px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 180px;
+            object-fit: contain;
+            background: #f8f8f8;
+            padding: 10px;
             border-radius: 10px;
+            margin-bottom: 15px;
         }
-        .card {
-            margin: 20px;
-            border: none; /* Remove default border */
-            border-radius: 10px; /* Rounded corners */
-            overflow: hidden; /* Prevent overflow */
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
-        .card img {
-            height: 200px;
-            object-fit: cover;
+
+        .breadcrumb a {
+            text-decoration: none;
         }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-      
-        .btn {
-            margin-top: 10px;
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1 class="text-center my-4">Here is your Fav❤️</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../assests/Icons8/google_phone.jpg" class="card-img-top" alt="iPhone 13">
-                <div class="card-body">
-                    <h5 class="card-title">iPhone 13</h5>
-                    <p class="card-text">₹79,900</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../assests/Icons8/google_phone.jpg" class="card-img-top" alt="Samsung Galaxy S21">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S21</h5>
-                    <p class="card-text">₹69,999</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../assests/Icons8/google_phone.jpg" class="card-img-top" alt="OnePlus 9">
-                <div class="card-body">
-                    <h5 class="card-title">OnePlus 9</h5>
-                    <p class="card-text">₹49,999</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../assests/Icons8/google_phone.jpg" class="card-img-top" alt="iPhone 13">
-                <div class="card-body">
-                    <h5 class="card-title">iPhone 13</h5>
-                    <p class="card-text">₹79,900</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../assests/Icons8/google_phone.jpg" class="card-img-top" alt="Samsung Galaxy S21">
-                <div class="card-body">
-                    <h5 class="card-title">Samsung Galaxy S21</h5>
-                    <p class="card-text">₹69,999</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="../Downloads/amaze_on-main/assests/Icons8/iphone.jpg" class="card-img-top" alt="OnePlus 9">
-                <div class="card-body">
-                    <h5 class="card-title">OnePlus 9</h5>
-                    <p class="card-text">₹49,999</p>
-                    <a href="#" class="btn btn-primary">Add to Cart</a>
-                    <a href="#" class="btn btn-success">Buy Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="a_img" src="../amaze_on/assests/Icons8/download.webp" alt="logo" height="30" style="border-radius: 50%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="#" class="nav-link">Favorites</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-2">
+                <li class="breadcrumb-item"><a href="home.html" class="text-white">Home</a></li>
+                <li class="breadcrumb-item active text-light" aria-current="page">Favorites</li>
+            </ol>
+        </nav>
+
+        <!-- Alert -->
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            You have <strong>3 items</strong> in your favorites!
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <!-- Title -->
+        <h2 class="mb-4">My Favorite Products ❤️</h2>
+
+        <div class="row">
+            <!-- Product Card 1 -->
+            <div class="col-sm-6 col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="badge bg-danger text-white">Limited Stock</div>
+                    <img src="../amaze_on/assests/Icons8/iphone.jpg" class="product-img" alt="iPhone 13">
+                    <h5 class="mb-2">iPhone 13</h5>
+                    <div class="mb-2">
+                        <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        <small class="text-muted">(210 Reviews)</small>
+                    </div>
+                    <p>
+                        <span class="text-muted mr-2"><s>₹84,900</s></span>
+                        <span class="font-weight-bold text-success">₹79,900</span>
+                    </p>
+                    <div>
+                        <button class="btn btn-outline-dark btn-sm">Add to Cart</button>
+                        <button class="btn btn-danger btn-sm">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-sm-6 col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="badge bg-success text-white">New</div>
+                    <img src="../amaze_on/assests/Icons8/samsumg.jpg" class="product-img" alt="Samsung S21">
+                    <h5 class="mb-2">Samsung Galaxy S21</h5>
+                    <div class="mb-2">
+                        <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <small class="text-muted">(320 Reviews)</small>
+                    </div>
+                    <p>
+                        <span class="text-muted mr-2"><s>₹74,999</s></span>
+                        <span class="font-weight-bold text-success">₹69,999</span>
+                    </p>
+                    <div>
+                        <button class="btn btn-outline-dark btn-sm">Add to Cart</button>
+                        <button class="btn btn-danger btn-sm">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-sm-6 col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="badge bg-warning text-dark">Limited Offer</div>
+                    <img src="../amaze_on/assests/Icons8/oneplus.jpg" class="product-img" alt="OnePlus 9">
+                    <h5 class="mb-2">OnePlus 9</h5>
+                    <div class="mb-2">
+                        <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        <small class="text-muted">(150 Reviews)</small>
+                    </div>
+                    <p>
+                        <span class="text-muted mr-2"><s>₹52,999</s></span>
+                        <span class="font-weight-bold text-success">₹49,999</span>
+                    </p>
+                    <div>
+                        <button class="btn btn-outline-dark btn-sm">Add to Cart</button>
+                        <button class="btn btn-danger btn-sm">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Start -->
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link custom-page" href="#">Prev</a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link custom-page" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link custom-page" href="#">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link custom-page" href="#">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link custom-page" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<!-- Pagination End -->
+
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
