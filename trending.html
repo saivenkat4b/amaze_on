@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../amaze_on/footer.css">
+    <link rel="icon" href="https://www.pngplay.com/wp-content/uploads/3/Amazon-Logo-PNG-Clipart-Background.png">
+    <title>Amaze On</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        /* header */
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .header {
+            background-color: rgb(255, 192, 44);
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .logo {
+            height: 45px;
+        }
+
+        .a_img {
+            width: 150px;
+            height: 45px;
+            display: flex;
+        }
+
+        .search {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .inp {
+            padding: 10px 15px;
+            width: 250px;
+            border: 2px solid #fdd835;
+            border-radius: 25px;
+            outline: none;
+            font-size: 12px;
+            font-family: "Poppins", sans-serif;
+            height: 35px;
+            /* Ensures consistent height */
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+
+        /* body css */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+        }
+
+        .card {
+            background: #fffbea;
+            border-radius: 15px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .custom-cart-btn {
+            color: #fff;
+        }
+        .name1
+        {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img class="a_img" src="../amaze_on/assests/Icons8/logo.png" alt="logo" style="object-fit: cover; width:100px;height:50px;border-radius: 2px;">
+
+        </div>
+
+        <nav class="nav-tabs">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#brands">Brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fav.html">Favourites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="myorders.html">My Orders</a>
+                </li>
+                <li class="nav-item cart-icon d-flex align-items-center">
+                    <a class="nav-link" href="cart.html">My Cart 🛒</a>
+                    <span class="cart-count badge bg-danger ms-1"></span>
+                </li>
+            </ul>
+        </nav>        
+
+
+        <div class="search" >
+            <div>
+                <input class="inp" type="text" placeholder="Search" />
+                <img class="search-icon" src="https://cdn-icons-png.flaticon.com/512/61/61088.png" alt="search icon">
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <div class="container py-5">
+        <!-- Filter and Sort Dropdowns -->
+        <div class="row mb-4">
+            <div class="col-auto">
+                <label for="categorySelect" class="form-label fw-semibold me-2">Category:</label>
+                <select id="categorySelect" class="form-select form-select-sm d-inline-block w-auto me-3"
+                    onchange="filterAndSort()">
+                    <option value="all">All</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Wearable">Smart Watch</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Headphones">Headphones</option>
+                    <option value="Accessories">Accessories</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label for="sortSelect" class="form-label fw-semibold me-2">Sort by:</label>
+                <select id="sortSelect" class="form-select form-select-sm d-inline-block w-auto"
+                    onchange="filterAndSort()">
+                    <option value="default">Default</option>
+                    <option value="lowToHigh">Price: Low to High</option>
+                    <option value="highToLow">Price: High to Low</option>
+                    <option value="brand">Brand Name (A-Z)</option>
+                </select>
+            </div>
+        </div>
+        <!-- Cards -->
+        <div class="row g-4" id="cardContainer"></div>
+    </div>
+
+    <script>
+
+       // Code Generated by Sidekick is for learning and experimentation purposes only.
+const products = [
+    {
+        id: 1,
+        name: "Smart Watch",
+        name1: "Fastrack Reflex Play+ AMOLED, Bluetooth Calling",
+        category: "Wearable",
+        price: 199,
+        oldPrice: 249,
+        discount: 50,
+        image: "https://m.media-amazon.com/images/I/81RSrpHOiaL._AC_UL480_FMwebp_QL65_.jpg",
+        rating: 4,
+        reviews: 98,
+        brand: "Fastrack"
+    },
+    {
+        id: 2,
+        name: "Smart Watch",
+        name1: "boAt Xtend Pro with 1.78” AMOLED Display",
+        category: "Wearable",
+        price: 299,
+        oldPrice: 359,
+        discount: 60,
+        image: "https://m.media-amazon.com/images/I/71Iit7U1S+L._AC_UL480_FMwebp_QL65_.jpg",
+        rating: 4.3,
+        reviews: 95,
+        brand: "Boat"
+    },
+    {
+        id: 3,
+        name: "Smart Watch",
+        name1: "Apple Watch Series 8 GPS 41mm",
+        category: "Wearable",
+        price: 1199,
+        oldPrice: 1349,
+        discount: 50,
+        image: "https://m.media-amazon.com/images/I/61BoaOUf+KL._AC_UL480_FMwebp_QL65_.jpg",
+        rating: 4.3,
+        reviews: 96,
+        brand: "Apple"
+    },
+    {
+        id: 4,
+        name: "Smart Watch",
+        name1: "Samsung Galaxy Watch 4 Bluetooth",
+        category: "Wearable",
+        price: 499,
+        oldPrice: 599,
+        discount: 70,
+        image: "https://m.media-amazon.com/images/I/71RrL+FFu1L._AC_UL960_FMwebp_QL65_.jpg",
+        rating: 4.5,
+        reviews: 120,
+        brand: "Samsung"
+    },
+    {
+        id: 5,
+        name: "Smart Watch",
+        name1: "Noise ColorFit Pro 4 Alpha 1.78” AMOLED",
+        category: "Wearable",
+        price: 899,
+        oldPrice: 999,
+        discount: 22,
+        image: "https://m.media-amazon.com/images/I/61-vRq2ulOL._AC_UL480_FMwebp_QL65_.jpg",
+        rating: 4.2,
+        reviews: 110,
+        brand: "Noise"
+    },
+    {
+        id: 6,
+        name: "Laptop",
+        name1: "Dell Inspiron 15 11th Gen i5, 8GB RAM",
+        category: "Laptop",
+        price: 39999,
+        oldPrice: 45999,
+        discount: 60,
+        image: "https://images6.alphacoders.com/991/991781.jpg",
+        rating: 4.1,
+        reviews: 210,
+        brand: "Dell"
+    },
+    {
+        id: 7,
+        name: "Laptop",
+        name1: "HP Pavilion 14, Ryzen 5, 16GB RAM",
+        category: "Laptop",
+        price: 54999,
+        oldPrice: 59999,
+        discount: 20,
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
+        rating: 4.4,
+        reviews: 180,
+        brand: "HP"
+    },
+    {
+        id: 8,
+        name: "Laptop",
+        name1: "Apple MacBook Air M2, 8GB RAM, 256GB SSD",
+        category: "Laptop",
+        price: 79999,
+        oldPrice: 89999,
+        discount: 88,
+        image: "https://images5.alphacoders.com/991/991780.jpg",
+        rating: 4.6,
+        reviews: 250,
+        brand: "Apple"
+    },
+    {
+        id: 9,
+        name: "Laptop",
+        name1: "Lenovo IdeaPad Slim 3, 11th Gen i3",
+        category: "Laptop",
+        price: 29999,
+        oldPrice: 34999,
+        discount: 31,
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80",
+        rating: 4.0,
+        reviews: 160,
+        brand: "Lenovo"
+    },
+    {
+        id: 10,
+        name: "Laptop",
+        name1: "Asus VivoBook 15, 8GB RAM, 512GB SSD",
+        category: "Laptop",
+        price: 45999,
+        oldPrice: 50999,
+        discount: 44,
+        image: "https://images6.alphacoders.com/991/991781.jpg",
+        rating: 4.3,
+        reviews: 190,
+        brand: "Asus"
+    },
+    {
+        id: 11,
+        name: "Mobile",
+        name1: "Samsung Galaxy M32 6GB RAM, 128GB",
+        category: "Mobile",
+        price: 12999,
+        oldPrice: 14999,
+        discount: 21,
+        image: "https://m.media-amazon.com/images/I/81T3olLXpUL._SL1500_.jpg",
+        rating: 4.2,
+        reviews: 320,
+        brand: "Samsung"
+    },
+    {
+        id: 12,
+        name: "Mobile",
+        name1: "Xiaomi Redmi Note 11 Pro 8GB RAM",
+        category: "Mobile",
+        price: 17999,
+        oldPrice: 19999,
+        discount: 30,
+        image: "https://m.media-amazon.com/images/I/81N7XKYIzFL._SL1500_.jpg",
+        rating: 4.5,
+        reviews: 410,
+        brand: "Xiaomi"
+    },
+    {
+        id: 13,
+        name: "Mobile",
+        name1: "OnePlus Nord CE 2 Lite 5G 6GB RAM",
+        category: "Mobile",
+        price: 24999,
+        oldPrice: 27999,
+        discount: 40,
+        image: "https://m.media-amazon.com/images/I/51KJE22BKrL._AC_UY654_FMwebp_QL65_.jpg",
+        rating: 4.7,
+        reviews: 500,
+        brand: "OnePlus"
+    },
+    {
+        id: 14,
+        name: "Mobile",
+        name1: "Apple iPhone 13 128GB",
+        category: "Mobile",
+        price: 34999,
+        oldPrice: 39999,
+        discount: 50,
+        image: "https://m.media-amazon.com/images/I/71nvkHnPpZL._AC_UY654_FMwebp_QL65_.jpg",
+        rating: 4.8,
+        reviews: 620,
+        brand: "Apple"
+    },
+    {
+        id: 15,
+        name: "Mobile",
+        name1: "Realme Narzo 50A 4GB RAM, 64GB",
+        category: "Mobile",
+        price: 15999,
+        oldPrice: 17999,
+        discount: 30,
+        image: "https://m.media-amazon.com/images/I/71SIo8NrZLL._AC_UY654_FMwebp_QL65_.jpg",
+        rating: 4.3,
+        reviews: 350,
+        brand: "Realme"
+    },
+    {
+        id: 16,
+        name: "Tablet",
+        name1: "Samsung Galaxy Tab A8 4GB RAM, 64GB",
+        category: "Tablet",
+        price: 15999,
+        oldPrice: 17999,
+        discount: 20,
+        image: "https://m.media-amazon.com/images/I/61mDK7w204L._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.1,
+        reviews: 210,
+        brand: "Samsung"
+    },
+    {
+        id: 17,
+        name: "Tablet",
+        name1: "Lenovo Tab M10 FHD Plus 4GB RAM",
+        category: "Tablet",
+        price: 22999,
+        oldPrice: 25999,
+        discount: 25,
+        image: "https://m.media-amazon.com/images/I/81b+Jw8brUL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.3,
+        reviews: 180,
+        brand: "Lenovo"
+    },
+    {
+        id: 18,
+        name: "Tablet",
+        name1: "Apple iPad 9th Gen 64GB WiFi",
+        category: "Tablet",
+        price: 34999,
+        oldPrice: 39999,
+        discount: 35,
+        image: "https://m.media-amazon.com/images/I/61G6WfvA9vL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.6,
+        reviews: 250,
+        brand: "Apple"
+    },
+    {
+        id: 19,
+        name: "Tablet",
+        name1: "Realme Pad Mini 3GB RAM, 32GB",
+        category: "Tablet",
+        price: 18999,
+        oldPrice: 20999,
+        discount: 75,
+        image: "https://m.media-amazon.com/images/I/61J1NUF2sKL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.0,
+        reviews: 160,
+        brand: "Realme"
+    },
+    {
+        id: 20,
+        name: "Tablet",
+        name1: "Xiaomi Pad 5 6GB RAM, 128GB",
+        category: "Tablet",
+        price: 27999,
+        oldPrice: 29999,
+        discount: 60,
+        image: "https://m.media-amazon.com/images/I/71J8aQRh8LL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.2,
+        reviews: 190,
+        brand: "Xiaomi"
+    },
+ 
+    {
+        id: 21,
+        name: "Headphones",
+        name1: "Sony WH-1000XM5 Wireless Noise Cancelling",
+        category: "Headphones",
+        price: 15999,
+        oldPrice: 17999,
+        discount: 43,
+        image: "https://m.media-amazon.com/images/I/41BoLKMYjnL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.1,
+        reviews: 210,
+        brand: "Sony"
+    },
+    {
+        id: 22,
+        name: "Headphones",
+        name1: "JBL Tune 760NC Over-Ear ANC Headphones",
+        category: "Headphones",
+        price: 22999,
+        oldPrice: 25999,
+        discount: 70,
+        image: "https://m.media-amazon.com/images/I/61kFL7ywsZS._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.3,
+        reviews: 180,
+        brand: "JBL"
+    },
+    {
+        id: 23,
+        name: "Headphones",
+        name1: "Bose QuietComfort 45 Bluetooth Headphones",
+        category: "Headphones",
+        price: 34999,
+        oldPrice: 39999,
+        discount: 64,
+        image: "https://m.media-amazon.com/images/I/51f7KKP25PL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.6,
+        reviews: 250,
+        brand: "Bose"
+    },
+    {
+        id: 24,
+        name: "Headphones",
+        name1: "Sennheiser HD 450BT Wireless Headphones",
+        category: "Headphones",
+        price: 18999,
+        oldPrice: 20999,
+        discount: 82,
+        image: "https://m.media-amazon.com/images/I/715xmAN3-qL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.0,
+        reviews: 160,
+        brand: "Sennheiser"
+    },
+    {
+        id: 25,
+        name: "Headphones",
+        name1: "Boat Rockerz 550 Over Ear Bluetooth Headphones",
+        category: "Headphones",
+        price: 27999,
+        oldPrice: 29999,
+        discount: 45,
+        image: "https://m.media-amazon.com/images/I/71quB2GTUKL._AC_UY327_FMwebp_QL65_.jpg",
+        rating: 4.2,
+        reviews: 190,
+        brand: "Boat"
+    }
+];
+
+
+        function getStars(rating) {
+            let full = "★".repeat(Math.floor(rating));
+            let empty = "☆".repeat(5 -Math.floor(rating));
+            return `<span class="text-warning">${full}${empty}</span>`;
+        }
+
+        function renderCards(data) {
+            const container = document.getElementById('cardContainer');
+            container.innerHTML = '';
+            if (data.length === 0) {
+                container.innerHTML = `<div class="col-12"><div class="alert alert-warning text-center">No products found.</div></div>`;
+                return;
+            }
+            data.forEach(product => {
+                container.innerHTML += `
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}" style="object-fit:contain;background-color:white">
+                            ${product.discount ? `<span class="badge bg-danger position-absolute top-0 start-0 m-2 discount">-${product.discount}%</span>` : ""}
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="text-muted mb-1">${product.category}</h6>
+                            <h5 class="card-title fw-semibold name1">${product.name1}</h5>
+                            <div class="d-flex justify-content-center align-items-center mb-2">
+                                ${getStars(product.rating)}
+                                <small class="ms-2 text-muted">(${product.reviews} reviews)</small>
+                            </div>
+                            <p class="card-text fw-bold mb-1">
+                                ₹${product.price.toLocaleString()} 
+                                ${product.oldPrice ? `<span class="text-muted text-decoration-line-through fs-6 ms-2">₹${product.oldPrice.toLocaleString()}</span>` : ""}
+                            </p>
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <button class="btn btn-outline-secondary btn-sm add-to-list">+ Add to List</button>
+                                <button class="btn btn-warning btn-sm custom-cart-btn add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+        }
+
+        function filterAndSort() {
+            const category = document.getElementById('categorySelect').value;
+            const sortValue = document.getElementById('sortSelect').value;
+
+            let filtered = [...products];
+
+            // Filter by category
+            if (category !== 'all') {
+                filtered = filtered.filter(p => {
+                    // For Smart Watch, match Wearable
+                    if (category === "Smart Watch") return p.category === "Wearable";
+                    return p.category === category;
+                });
+            }
+
+            // Sort
+            if (sortValue === 'lowToHigh') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sortValue === 'highToLow') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (sortValue === 'brand') {
+                filtered.sort((a, b) => a.brand.localeCompare(b.brand));
+            }
+
+            renderCards(filtered);
+        }
+
+        // Initial render
+        filterAndSort();
+    </script>
+</body>
+
+</html>
